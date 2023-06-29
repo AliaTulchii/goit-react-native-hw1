@@ -60,7 +60,7 @@ const LoginScreen = () => {
             setValue={setPassword}
             secureTextEntry={passwordHide}
             />
-            <TouchableOpacity activeOpacity={0.8} style={styles.touachableButton} onPress={setPasswordVisibility}>
+            <TouchableOpacity activeOpacity={0.8}  onPress={setPasswordVisibility}>
             <Image source={passwordHide ? hide : view} style={styles.buttonImage} />
             </TouchableOpacity>
             </View>
@@ -73,12 +73,14 @@ const LoginScreen = () => {
             />
 
             <Text style={styles.textLogin}>
-                Don't have an account?
+            Don't have an account?
+            <TouchableOpacity activeOpacity={0.8}>
             <Button
                 text=" Create one"
                 type="TERTIARY"
-                onPress={onRegisterPressed}
             />
+            </TouchableOpacity>
+           
             </Text>
                 
             
