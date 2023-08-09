@@ -21,10 +21,7 @@ const initialState = {
 
 const LoginScreen = () => {
     const { height } = useWindowDimensions();
-    const [state, setState] = useState(initialState)
-    
-    // const { useremail, setUseremail } = useState('');
-    // const { password, setPassword } = useState('');
+    const [state, setState] = useState(initialState);
     const [passwordHide, setPasswordHide] = useState(true);
 
 
@@ -33,13 +30,7 @@ const LoginScreen = () => {
         console.warn("Login", state);
         console.log(state);
         setState(initialState);
-        // setUseremail({ useremail: '' });
-        // setPassword({password: ''});
         
-    }
-
-    const onRegisterPressed = () => {
-        console.warn("Registration");
     }
 
 
@@ -60,8 +51,7 @@ const LoginScreen = () => {
             <View style={styles.passwordBox}>
             <CustomInput
             placeholder="Enter your email"
-            // value={state.email}
-            // setValue={setUseremail}
+            value={state.email}
             secureTextEntry={false}
             onChangeText={(value) => setState((prevState) => ({ ...prevState, email: value }))}               
             />
@@ -71,8 +61,7 @@ const LoginScreen = () => {
             <View style={styles.passwordBox}>
             <CustomInput
             placeholder="Password"
-            // value={state.password}
-            // setValue={setPassword}
+            value={state.password}
             onChangeText={(value) => setState((prevState) => ({ ...prevState, password: value }))}               
             secureTextEntry={passwordHide}
             />

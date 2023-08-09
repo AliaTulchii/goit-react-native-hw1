@@ -7,16 +7,15 @@ import {
 import React, { useState } from 'react'
 
 
-const CustomInput = ({value, setValue, placeholder, secureTextEntry}) => {
+const CustomInput = ({value, onChangeText, placeholder, secureTextEntry}) => {
     const [isFocused, setIsFocused] = useState(false);
    
 return (
 
         <View style={[styles.container, isFocused && {borderWidth: 2, borderColor: 'teal'}]}>
-    {/* // <View style={styles.container}> */}
         <TextInput
             value={value}
-            onChangeText={setValue}
+            onChangeText={onChangeText}
             placeholder={placeholder}
             secureTextEntry={secureTextEntry}
             onFocus={() => setIsFocused(true)}

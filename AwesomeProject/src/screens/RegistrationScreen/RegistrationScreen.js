@@ -14,18 +14,28 @@ import jobs from '../../../images/jobs.png';
 import hide from '../../../images/hide.png';
 import view from '../../../images/view.png';
 
+
+const initialState = {
+    login: '',
+    email: '',
+    password: '',
+}
+
 const RegistrationScreen = () => {
+    const [state, setState] = useState(initialState);
     const [useremail, setUseremail]  = useState('');
     const [password, setPassword] = useState('');  
     const [passwordHide, setPasswordHide] = useState(true);
 
 
-    const onLoginPressed = () => {
-        console.warn("Login");
-    }
+    // const onLoginPressed = () => {
+    //     console.warn("Login");
+    // }
 
     const onRegisterPressed = () => {
-        console.warn("Registration");
+        console.warn("Registration", state);
+        console.log(state);
+        setState(initialState);
     }
 
     const setPasswordVisibility = () => {
@@ -57,17 +67,17 @@ const RegistrationScreen = () => {
             <View style={styles.passwordBox}>
             <CustomInput
             placeholder="Login"
-            value={useremail}
-            setValue={setUseremail}
-            secureTextEntry={false}                
+            value={state.login}
+            secureTextEntry={false}   
+            onChangeText={(value) => setState((prevState) => ({ ...prevState, login: value }))}        
             />
             </View>
             
             <View style={styles.passwordBox}>
             <CustomInput
             placeholder="Email"
-            value={useremail}
-            setValue={setUseremail}
+            value={state.email}
+            onChangeText={(value) => setState((prevState) => ({ ...prevState, email: value }))}
             secureTextEntry={false}
             />
             </View>
@@ -77,8 +87,8 @@ const RegistrationScreen = () => {
             <View style={styles.passwordBox}>
             <CustomInput
             placeholder="Password"
-            value={password}
-            setValue={setPassword}
+            value={state.password}
+            onChangeText={(value) => setState((prevState) => ({ ...prevState, password: value }))}
             secureTextEntry={passwordHide}
             />
             <TouchableOpacity activeOpacity={0.8}  onPress={setPasswordVisibility}>
@@ -88,7 +98,7 @@ const RegistrationScreen = () => {
             
             
             <Button
-                onPress={onLoginPressed}
+                onPress={onRegisterPressed}
                 text="Register"
             />
 
