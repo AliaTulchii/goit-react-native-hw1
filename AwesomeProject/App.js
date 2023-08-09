@@ -21,7 +21,7 @@ export default function App() {
         {/* <StatusBar style="auto" /> */}
       <ImageBackground source={leaves} style={styles.imgBg}>
       
-        {/* <LoginScreen /> */}
+        <LoginScreen />
         <RegistrationScreen/>
         
       </ImageBackground>     
