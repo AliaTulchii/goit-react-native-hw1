@@ -5,9 +5,8 @@ import {
     StyleSheet,
     useWindowDimensions,
     ScrollView,
-    ImageBackground,
-    KeyboardAvoidingView,
-    TouchableOpacity
+    TouchableOpacity,
+    TouchableWithoutFeedback
 } from 'react-native'
 import React, {useState} from 'react';
 import CustomInput from '../../components/CustomInput/CustomInput';
@@ -15,16 +14,28 @@ import Button from '../../components/Button/Button';
 import hide from '../../../images/hide.png';
 import view from '../../../images/view.png';
 
+const initialState = {
+    email: '',
+    password: '',
+}
+
 const LoginScreen = () => {
     const { height } = useWindowDimensions();
+    const [state, setState] = useState(initialState)
     
-    const { useremail, setUseremail } = useState('');
-    const { password, setPassword } = useState('');
+    // const { useremail, setUseremail } = useState('');
+    // const { password, setPassword } = useState('');
     const [passwordHide, setPasswordHide] = useState(true);
+
 
     
     const onLoginPressed = () => {
-        console.warn("Login");
+        console.warn("Login", state);
+        console.log(state);
+        setState(initialState);
+        // setUseremail({ useremail: '' });
+        // setPassword({password: ''});
+        
     }
 
     const onRegisterPressed = () => {
@@ -37,6 +48,9 @@ const LoginScreen = () => {
     }
 
 
+    
+
+
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.root}>
@@ -46,9 +60,10 @@ const LoginScreen = () => {
             <View style={styles.passwordBox}>
             <CustomInput
             placeholder="Enter your email"
-            value={useremail}
-            setValue={setUseremail}
+            // value={state.email}
+            // setValue={setUseremail}
             secureTextEntry={false}
+            onChangeText={(value) => setState((prevState) => ({ ...prevState, email: value }))}               
             />
             </View>
             
@@ -56,8 +71,9 @@ const LoginScreen = () => {
             <View style={styles.passwordBox}>
             <CustomInput
             placeholder="Password"
-            value={password}
-            setValue={setPassword}
+            // value={state.password}
+            // setValue={setPassword}
+            onChangeText={(value) => setState((prevState) => ({ ...prevState, password: value }))}               
             secureTextEntry={passwordHide}
             />
             <TouchableOpacity activeOpacity={0.8}  onPress={setPasswordVisibility}>
@@ -121,10 +137,11 @@ const styles = StyleSheet.create({
     },
 
     textLogin: {
-        width: '100%',
-        height: 20,
+        width: 400,
+        height: 40,
         padding: 5,
         textAlign: 'center',
+        justifyContent: 'center',
         alignItems:'center',
         color: 'gray',
         fontWeight: 'bold',
@@ -132,7 +149,7 @@ const styles = StyleSheet.create({
     buttonImage: {
         width: 24,
         height: 24,
-        marginLeft: 30,
+        marginLeft: -40,
     },
     passwordBox: {
         display: 'flex',
@@ -147,6 +164,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 5,
     },
+
+    
 
 });
 

@@ -155,10 +155,11 @@ const styles = StyleSheet.create({
     },
 
     textLogin: {
-        width: '100%',
-        height: 20,
+        width: 500,
+        height: 30,
         padding: 5,
         textAlign: 'center',
+        justifyContent: 'center',
         alignItems:'center',
         color: 'gray',
         fontWeight: 'bold',
@@ -166,7 +167,7 @@ const styles = StyleSheet.create({
     buttonImage: {
         width: 24,
         height: 24,
-        marginLeft: 30,
+        marginLeft: -40,
     },
     passwordBox: {
         display: 'flex',

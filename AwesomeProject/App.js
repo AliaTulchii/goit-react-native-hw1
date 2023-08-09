@@ -22,7 +22,7 @@ export default function App() {
       <ImageBackground source={leaves} style={styles.imgBg}>
       
         <LoginScreen />
-        <RegistrationScreen/>
+        {/* <RegistrationScreen/> */}
         
       </ImageBackground>     
       

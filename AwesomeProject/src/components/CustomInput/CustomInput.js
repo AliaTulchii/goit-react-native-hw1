@@ -10,15 +10,14 @@ import React, { useState } from 'react'
 const CustomInput = ({value, setValue, placeholder, secureTextEntry}) => {
     const [isFocused, setIsFocused] = useState(false);
    
-    return (
-          
+return (
 
-    <View style={[styles.container, isFocused && {borderWidth: 2, borderColor: 'teal'}]}>
+        <View style={[styles.container, isFocused && {borderWidth: 2, borderColor: 'teal'}]}>
+    {/* // <View style={styles.container}> */}
         <TextInput
             value={value}
             onChangeText={setValue}
             placeholder={placeholder}
-            style={styles.input}
             secureTextEntry={secureTextEntry}
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
@@ -30,17 +29,13 @@ const CustomInput = ({value, setValue, placeholder, secureTextEntry}) => {
 const styles = StyleSheet.create({
     container: {
         
-        width: '70%',
-        height: 40,        
-
-        
+        width: '100%',
+        height: 40,              
 
         paddingHorizontal: 10,
         marginVertical: 10,
         paddingTop: 10,
-    },
-    input: {
-        
+        borderRadius: 5
     },
 })
 
