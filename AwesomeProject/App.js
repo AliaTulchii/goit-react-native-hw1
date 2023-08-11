@@ -7,8 +7,12 @@ import {
 } from 'react-native';
 import LoginScreen from './src/screens/LoginScreen/LoginScreen'
 import RegistrationScreen from './src/screens/RegistrationScreen/RegistrationScreen';
+import CreatePostsScreen from './src/screens/CreatePostsScreen/CreatePostsScreen'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import leaves from './images/leaves.jpg'
+import CommentsScreen from './src/screens/CommentsScreen/CommentsScreen';
+import ProfileScreen from './src/screens/ProfileScreen/ProfileScreen';
+import PostsScreen from './src/screens/PostsScreen/PostsScreen';
 
 
 export default function App() {
@@ -21,8 +25,12 @@ export default function App() {
         {/* <StatusBar style="auto" /> */}
       <ImageBackground source={leaves} style={styles.imgBg}>
       
-        <LoginScreen />
-        <RegistrationScreen/>
+        {/* <LoginScreen /> */}
+        {/* <RegistrationScreen/> */}
+        {/* <CreatePostsScreen/> */}
+        {/* <CommentsScreen/> */}
+        {/* <ProfileScreen/> */}
+        <PostsScreen/>
         
       </ImageBackground>     
       

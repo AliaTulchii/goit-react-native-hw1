@@ -14,10 +14,10 @@ const Button = ({onPress, text, type="PRIMARY"}) => {
 
 const styles = StyleSheet.create({
     container: {
-        width: '60%',
-        height: 35,
-        borderRadius: 16,
-        paddingTop: 10,
+        width: '70%',
+        height: 50,
+        borderRadius: 25,
+        paddingTop: 15,
         marginVertical: 10,
     },
 
