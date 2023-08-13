@@ -14,32 +14,32 @@ const AuthStack = createStackNavigator();
 const MainTab = createBottomTabNavigator();
 
 export const useRoute = (isAuth) => {
-    // if (!isAuth) {
-    // return <AuthStack.Navigator>
-    // <AuthStack.Screen
-    //   options={{
-    //     headerShown: false,
-    //   }}
-    //   name='Login'
-    //   component={LoginScreen}
-    // />
-    // <AuthStack.Screen
-    //   options={{
-    //     headerShown: false,
-    //   }}
-    //   name='Registration'
-    //   component={RegistrationScreen}
-    // />
-    // <AuthStack.Screen
-    //   options={{
-    //     headerShown: false,
-    //   }}
-    //   name='Posts'
-    //   component={PostsScreen}
-    // />
+    if (!isAuth) {
+    return <AuthStack.Navigator>
+    <AuthStack.Screen
+      options={{
+        headerShown: false,
+      }}
+      name='Login'
+      component={LoginScreen}
+    />
+    <AuthStack.Screen
+      options={{
+        headerShown: false,
+      }}
+      name='Registration'
+      component={RegistrationScreen}
+    />
+    <AuthStack.Screen
+      options={{
+        headerShown: false,
+      }}
+      name='Posts'
+      component={PostsScreen}
+    />
     
-    // </AuthStack.Navigator>
-    // }
+    </AuthStack.Navigator>
+    }
     return <MainTab.Navigator tabBarOptions={{ showLabel: false}}>
         <MainTab.Screen
             options={{ headerShown: false, tabBarIcon: ({focused,size,color})=><Ionicons name="ios-grid" size={24} color='teal' /> }}
