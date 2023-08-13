@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
 
     container_TERTIARY: {
         width: 80,
-        marginLeft: 5,
-        paddingTop: 9,
+        height: 30,
+        paddingTop: 0,
     },
 
     text: {

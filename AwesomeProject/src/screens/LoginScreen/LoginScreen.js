@@ -6,20 +6,23 @@ import {
     useWindowDimensions,
     ScrollView,
     TouchableOpacity,
-    TouchableWithoutFeedback
+    ImageBackground,
+
 } from 'react-native'
 import React, {useState} from 'react';
 import CustomInput from '../../components/CustomInput/CustomInput';
 import Button from '../../components/Button/Button';
 import hide from '../../../images/hide.png';
 import view from '../../../images/view.png';
+import leaves from '../../../images/leaves.jpg'
 
 const initialState = {
     email: '',
     password: '',
 }
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
+    console.log('navigation', navigation);
     const { height } = useWindowDimensions();
     const [state, setState] = useState(initialState);
     const [passwordHide, setPasswordHide] = useState(true);
@@ -30,7 +33,7 @@ const LoginScreen = () => {
         console.warn("Login", state);
         console.log(state);
         setState(initialState);
-        
+        navigation.navigate('Posts')
     }
 
 
@@ -45,7 +48,10 @@ const LoginScreen = () => {
     return (
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={styles.root}>
+            <ImageBackground source={leaves} style={styles.imgBg}>
+
             <View style={styles.loginBox}>
+                    
             <Text style={styles.title}>Sign in</Text>
 
             <View style={styles.passwordBox}>
@@ -76,22 +82,25 @@ const LoginScreen = () => {
                 onPress={onLoginPressed}
                 text="Login"
             />
-
+            
+            <View style={styles.qaBlock}>
             <Text style={styles.textLogin}>
-            Don't have an account?
+            Don't have an account?           
+            </Text>
             <TouchableOpacity activeOpacity={0.8}>
-            <Button
+                <Button
+                onPress={()=> navigation.navigate('Registration')}
                 text=" Create one"
                 type="TERTIARY"
-            />
+                />
             </TouchableOpacity>
-           
-            </Text>
+            </View>
+            
                 
             
             
         </View>
-            
+        </ImageBackground>   
         
     </View>
     </ScrollView>
@@ -125,13 +134,20 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
     },
 
-    textLogin: {
-        width: 400,
+    qaBlock: {
+        width: '80%',
         height: 40,
-        padding: 5,
-        textAlign: 'center',
+        display: 'flex',
+        flexDirection: 'row',
         justifyContent: 'center',
-        alignItems:'center',
+        alignItems: 'center',
+        marginBottom:210
+    },
+
+    textLogin: {
+        width: 160,
+        height: 30,
+        textAlign: 'center',
         color: 'gray',
         fontWeight: 'bold',
     },
@@ -152,8 +168,7 @@ const styles = StyleSheet.create({
         borderColor: '#e8e8e8',
         borderWidth: 1,
         borderRadius: 5,
-    },
-
+    }
     
 
 });

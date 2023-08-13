@@ -6,14 +6,14 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import { AntDesign, Octicons, FontAwesome, MaterialIcons} from '@expo/vector-icons'; 
+import {  Octicons, FontAwesome, MaterialIcons} from '@expo/vector-icons'; 
 import React, {useState} from 'react';
 import jobs from '../../../images/jobs.png';
 import first from '../../../images/firstiphone.webp';
 import mac from '../../../images/mac.webp';
 import ipad from '../../../images/ipad.webp'
 
-const PostsScreen = () => {
+const PostsScreen = ({navigation}) => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.root}>
@@ -22,7 +22,8 @@ const PostsScreen = () => {
           <View style={styles.headBox}>
             <Text style={styles.title}>Posts</Text>
             <TouchableOpacity style={styles.logoutStyles} activeOpacity={0.8} >
-            <MaterialIcons
+                <MaterialIcons
+                    onPress={()=> navigation.navigate('Login')}
                     name="exit-to-app"
                     size={24} color="teal" />
             </TouchableOpacity>

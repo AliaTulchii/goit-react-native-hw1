@@ -4,6 +4,8 @@ import {
     StyleSheet,
     Dimensions,
     Image,
+    ImageBackground,
+    ScrollView
 } from 'react-native'
 import React from 'react';
 import { Feather, MaterialIcons, FontAwesome, AntDesign, Octicons } from '@expo/vector-icons'; 
@@ -11,6 +13,7 @@ import jobs from '../../../images/jobs.png';
 import first from '../../../images/firstiphone.webp';
 import mac from '../../../images/mac.webp';
 import ipad from '../../../images/ipad.webp'
+import leaves from '../../../images/leaves.jpg'
 
 
 
@@ -18,8 +21,11 @@ import ipad from '../../../images/ipad.webp'
 const ProfileScreen = () => {
     
 
-    return (           
-        <View style={styles.root}>            
+    return (       
+        <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.root}> 
+        <ImageBackground source={leaves} style={styles.imgBg}>
+            <View style={styles.profileBox}>
             <Image
                 source={jobs}
                 style={styles.image}
@@ -126,18 +132,23 @@ const ProfileScreen = () => {
                     </View>
                 </View>
             </View>
+            </View>    
             
+            </ImageBackground>
              
     </View>
-    
+    </ScrollView>
     
   )
 }
 
 const styles = StyleSheet.create({
     root: {
-        position: 'relative',
         alignItems: 'center',
+    },
+
+    profileBox: {
+        position: 'relative',        
         width: Dimensions.get('window').width,
         marginTop: 200,
         paddinBottom: 100,

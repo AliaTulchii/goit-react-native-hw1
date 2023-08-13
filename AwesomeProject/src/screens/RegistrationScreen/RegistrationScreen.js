@@ -4,7 +4,8 @@ import {
     StyleSheet,
     Dimensions,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    ImageBackground,
 } from 'react-native'
 import React, {useState} from 'react';
 import CustomInput from '../../components/CustomInput/CustomInput';
@@ -13,6 +14,7 @@ import { Feather } from '@expo/vector-icons';
 import jobs from '../../../images/jobs.png';
 import hide from '../../../images/hide.png';
 import view from '../../../images/view.png';
+import leaves from '../../../images/leaves.jpg'
 
 
 const initialState = {
@@ -21,21 +23,18 @@ const initialState = {
     password: '',
 }
 
-const RegistrationScreen = () => {
+const RegistrationScreen = ({navigation}) => {
     const [state, setState] = useState(initialState);
     const [useremail, setUseremail]  = useState('');
     const [password, setPassword] = useState('');  
     const [passwordHide, setPasswordHide] = useState(true);
 
 
-    // const onLoginPressed = () => {
-    //     console.warn("Login");
-    // }
-
     const onRegisterPressed = () => {
         console.warn("Registration", state);
         console.log(state);
         setState(initialState);
+        navigation.navigate('Home')
     }
 
     const setPasswordVisibility = () => {
@@ -49,6 +48,8 @@ const RegistrationScreen = () => {
     return (
             
         <View style={styles.root}>
+            <ImageBackground source={leaves} style={styles.imgBg}>
+            <View style={styles.loginBox}>
             <Image
                 source={jobs}
                 style={styles.image}
@@ -102,18 +103,22 @@ const RegistrationScreen = () => {
                 text="Register"
             />
 
+            <View style={styles.qaBlock}>
             <Text style={styles.textLogin}>
-                Already have an account?
-                <TouchableOpacity activeOpacity={0.8}>
+                Already have an account?            
+            </Text>
+            <TouchableOpacity activeOpacity={0.8}>
                 <Button
+                onPress={()=>navigation.navigate('Login')}
                 text="Login"
                 type="TERTIARY"
                 />
-                </TouchableOpacity>
+            </TouchableOpacity>
+            </View>
+
+            </View>
             
-            </Text>
-            
-             
+            </ImageBackground>  
     </View>
     
     
@@ -122,23 +127,23 @@ const RegistrationScreen = () => {
 
 const styles = StyleSheet.create({
     root: {
-        position: 'relative',
         alignItems: 'center',
-        width: Dimensions.get('window').width,
+        // backgroundColor: 'transparent',
+    },
+    loginBox: {
+        width: '100%',
+        height: '80%',
         marginTop: 300,
-        paddinBottom: 100,
-        paddingTop: 80,
-        paddingHorizontal:20,
+        paddingTop: 60,
         backgroundColor: '#f9fbfc',
         borderTopLeftRadius: 16,
         borderTopRightRadius: 16,
         alignItems: 'center',
-        // backgroundColor: 'transparent',
     },
     image: {
         position: 'absolute',
         zIndex: 7,
-        top: -70,
+        top: -80,
         backgroundColor: '#fff',
         width: 120,
         height: 120,
@@ -148,7 +153,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         zIndex: 10,
         right: 115,
-        top: 15,
+        top: 5,
         backgroundColor: '#fff',
         borderRadius: 15,
     },
@@ -164,13 +169,20 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
     },
 
-    textLogin: {
-        width: 500,
-        height: 30,
-        padding: 5,
-        textAlign: 'center',
+    qaBlock: {
+        width: '80%',
+        height: 40,
+        display: 'flex',
+        flexDirection: 'row',
         justifyContent: 'center',
-        alignItems:'center',
+        alignItems: 'baseline',
+        marginBottom: 100
+    },
+
+    textLogin: {
+        width: 190,
+        fontSize: 15,
+        textAlign: 'center',
         color: 'gray',
         fontWeight: 'bold',
     },
