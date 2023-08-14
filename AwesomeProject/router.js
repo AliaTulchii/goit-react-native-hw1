@@ -1,16 +1,18 @@
 import React from "react";
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import LoginScreen from './src/screens/LoginScreen/LoginScreen'
-import RegistrationScreen from './src/screens/RegistrationScreen/RegistrationScreen';
-import CreatePostsScreen from './src/screens/CreatePostsScreen/CreatePostsScreen'
-import CommentsScreen from './src/screens/CommentsScreen/CommentsScreen';
-import ProfileScreen from './src/screens/ProfileScreen/ProfileScreen';
-import PostsScreen from './src/screens/PostsScreen/PostsScreen';
+import LoginScreen from './src/screens/auth/LoginScreen/LoginScreen'
+import RegistrationScreen from './src/screens/auth/RegistrationScreen/RegistrationScreen';
+import CreatePostsScreen from './src/screens/main/CreatePostsScreen/CreatePostsScreen'
+import CommentsScreen from './src/screens/main/CommentsScreen/CommentsScreen';
+import ProfileScreen from './src/screens/main/ProfileScreen/ProfileScreen';
+import PostsScreen from './src/screens/home/PostsScreen/PostsScreen';
 import { Ionicons, Octicons, FontAwesome  } from '@expo/vector-icons';
 
 
+
 const AuthStack = createStackNavigator();
+
 const MainTab = createBottomTabNavigator();
 
 export const useRoute = (isAuth) => {

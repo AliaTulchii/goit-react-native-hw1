@@ -8,13 +8,13 @@ import {
     ImageBackground,
 } from 'react-native'
 import React, {useState} from 'react';
-import CustomInput from '../../components/CustomInput/CustomInput';
-import Button from '../../components/Button/Button';
+import CustomInput from '../../../components/CustomInput/CustomInput';
+import Button from '../../../components/Button/Button';
 import { Feather } from '@expo/vector-icons'; 
-import jobs from '../../../images/jobs.png';
-import hide from '../../../images/hide.png';
-import view from '../../../images/view.png';
-import leaves from '../../../images/leaves.jpg'
+import jobs from '../../../../images/jobs.png';
+import hide from '../../../../images/hide.png';
+import view from '../../../../images/view.png';
+import leaves from '../../../../images/leaves.jpg'
 
 
 const initialState = {
@@ -34,7 +34,7 @@ const RegistrationScreen = ({navigation}) => {
         console.warn("Registration", state);
         console.log(state);
         setState(initialState);
-        navigation.navigate('Home')
+        navigation.navigate('ROUTES.HOME')
     }
 
     const setPasswordVisibility = () => {
@@ -109,7 +109,7 @@ const RegistrationScreen = ({navigation}) => {
             </Text>
             <TouchableOpacity activeOpacity={0.8}>
                 <Button
-                onPress={()=>navigation.navigate('Login')}
+                onPress={()=>navigation.navigate('ROUTES.LOGIN')}
                 text="Login"
                 type="TERTIARY"
                 />

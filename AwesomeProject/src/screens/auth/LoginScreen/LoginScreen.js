@@ -10,11 +10,11 @@ import {
 
 } from 'react-native'
 import React, {useState} from 'react';
-import CustomInput from '../../components/CustomInput/CustomInput';
-import Button from '../../components/Button/Button';
-import hide from '../../../images/hide.png';
-import view from '../../../images/view.png';
-import leaves from '../../../images/leaves.jpg'
+import CustomInput from '../../../components/CustomInput/CustomInput';
+import Button from '../../../components/Button/Button';
+import hide from '../../../../images/hide.png';
+import view from '../../../../images/view.png';
+import leaves from '../../../../images/leaves.jpg'
 
 const initialState = {
     email: '',
@@ -33,7 +33,7 @@ const LoginScreen = ({ navigation }) => {
         console.warn("Login", state);
         console.log(state);
         setState(initialState);
-        navigation.navigate('Posts')
+        navigation.navigate('ROUTES.HOME')
     }
 
 
@@ -89,7 +89,7 @@ const LoginScreen = ({ navigation }) => {
             </Text>
             <TouchableOpacity activeOpacity={0.8}>
                 <Button
-                onPress={()=> navigation.navigate('Registration')}
+                onPress={()=> navigation.navigate('ROUTES.REGISTRATION')}
                 text=" Create one"
                 type="TERTIARY"
                 />

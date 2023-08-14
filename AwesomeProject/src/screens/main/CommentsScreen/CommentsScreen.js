@@ -8,9 +8,9 @@ import {
 } from 'react-native';
 import { AntDesign, Ionicons } from '@expo/vector-icons'; 
 import React, {useState} from 'react';
-import CustomInput from '../../components/CustomInput/CustomInput';
-import applelovers from '../../../images/applelovers.jpg';
-import group from '../../../images/group.png';
+import CustomInput from '../../../components/CustomInput/CustomInput';
+import applelovers from '../../../../images/applelovers.jpg';
+import group from '../../../../images/group.png';
 
 const CommentsScreen = () => {
 

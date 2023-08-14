@@ -8,10 +8,10 @@ import {
 } from 'react-native';
 import {  Octicons, FontAwesome, MaterialIcons} from '@expo/vector-icons'; 
 import React, {useState} from 'react';
-import jobs from '../../../images/jobs.png';
-import first from '../../../images/firstiphone.webp';
-import mac from '../../../images/mac.webp';
-import ipad from '../../../images/ipad.webp'
+import jobs from '../../../../images/jobs.png';
+import first from '../../../../images/firstiphone.webp';
+import mac from '../../../../images/mac.webp';
+import ipad from '../../../../images/ipad.webp'
 
 const PostsScreen = ({navigation}) => {
   return (
@@ -23,7 +23,7 @@ const PostsScreen = ({navigation}) => {
             <Text style={styles.title}>Posts</Text>
             <TouchableOpacity style={styles.logoutStyles} activeOpacity={0.8} >
                 <MaterialIcons
-                    onPress={()=> navigation.navigate('Login')}
+                    onPress={()=> navigation.navigate('ROUTES.LOGIN')}
                     name="exit-to-app"
                     size={24} color="teal" />
             </TouchableOpacity>

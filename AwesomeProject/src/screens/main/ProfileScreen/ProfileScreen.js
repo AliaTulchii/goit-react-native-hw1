@@ -9,16 +9,16 @@ import {
 } from 'react-native'
 import React from 'react';
 import { Feather, MaterialIcons, FontAwesome, AntDesign, Octicons } from '@expo/vector-icons'; 
-import jobs from '../../../images/jobs.png';
-import first from '../../../images/firstiphone.webp';
-import mac from '../../../images/mac.webp';
-import ipad from '../../../images/ipad.webp'
-import leaves from '../../../images/leaves.jpg'
+import jobs from '../../../../images/jobs.png';
+import first from '../../../../images/firstiphone.webp';
+import mac from '../../../../images/mac.webp';
+import ipad from '../../../../images/ipad.webp'
+import leaves from '../../../../images/leaves.jpg'
 
 
 
 
-const ProfileScreen = () => {
+const ProfileScreen = ({navigation}) => {
     
 
     return (       
@@ -39,6 +39,7 @@ const ProfileScreen = () => {
             </View>
             <View style={styles.logout}>
                 <MaterialIcons
+                    onPress={()=> navigation.navigate('ROUTES.LOGIN')}
                     name="exit-to-app"
                     size={24} color="white" />
             </View>

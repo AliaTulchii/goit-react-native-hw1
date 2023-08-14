@@ -4,45 +4,20 @@ import {
   View,
   Platform,
 } from 'react-native';
+import 'react-native-gesture-handler'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { NavigationContainer } from '@react-navigation/native';
-import { useRoute } from './router';
-
-
-
+import AuthNavigator from './src/navigations/AuthNavigator';
 
 
 
 export default function App() {
-  console.log(Platform.OS);
-  const routing = useRoute(null)
   return (
     
     <NavigationContainer> 
-    {routing}    
+      <AuthNavigator/>
     </NavigationContainer>
-    
-
-    // <KeyboardAwareScrollView >
-      
-    //   <View style={styles.container}>
-    //     {/* <StatusBar style="auto" /> */}
-    //   <ImageBackground source={leaves} style={styles.imgBg}>
-      
-          
-            /* <LoginScreen /> */
-            /* <RegistrationScreen/> */
-    //     {/* <CreatePostsScreen/> */}
-    //     {/* <CommentsScreen/> */}
-    //     {/* <ProfileScreen/> */}
-    //     {/* <PostsScreen/> */}
-        
-    //   </ImageBackground>     
-      
-    // </View>
-    
-    // </KeyboardAwareScrollView>
-    
+  
   );
 }
 

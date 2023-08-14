@@ -10,9 +10,9 @@ import {
 } from 'react-native';
 import { AntDesign, Entypo, Octicons, Fontisto } from '@expo/vector-icons'; 
 import React, {useState} from 'react';
-import CustomInput from '../../components/CustomInput/CustomInput';
-import Button from '../../components/Button/Button';
-import macbook from '../../../images/macbook.jpg'
+import CustomInput from '../../../components/CustomInput/CustomInput';
+import Button from '../../../components/Button/Button';
+import macbook from '../../../../images/macbook.jpg'
 
 
 
